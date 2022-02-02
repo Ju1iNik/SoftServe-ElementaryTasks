@@ -10,7 +10,7 @@ public class Main {
         while (ans==true) {
             Envelop first_envelop = new Envelop();
             Envelop second_envelop = new Envelop();
-            Wrapchecking(first_envelop,second_envelop);
+            wrapChecking(first_envelop,second_envelop);
             System.out.println("Do you want to try again?");
             String string_ans= mr.readLine();
             if(string_ans.equalsIgnoreCase("y")||string_ans.equalsIgnoreCase("yes")){
@@ -20,7 +20,7 @@ public class Main {
             }
         }
     }
-    public static void Wrapchecking(Envelop a,Envelop b){
+    public static void wrapChecking(Envelop a, Envelop b){
 
         if ((a.HEIGHT>=b.HEIGHT&&a.WIDTH>= b.WIDTH)||(a.HEIGHT>=b.WIDTH&&a.WIDTH>= b.HEIGHT)){
             System.out.println("It would be a perfect fit");

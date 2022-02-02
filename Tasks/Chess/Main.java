@@ -6,10 +6,30 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int x = Integer.parseInt(br.readLine());
-        int y = Integer.parseInt(br.readLine());
+        boolean wError = true;
+        boolean hError = true;
+        int x = 0;
+        int y = 0;
+        System.out.println("Insert width of deck");
+        do {
+            try {
+                x = Integer.parseInt(br.readLine());
+                wError = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Insert Integer or Float values");
+            }
+        } while (wError);
+        System.out.println("Insert height of deck");
+        do {
+            try {
+                y = Integer.parseInt(br.readLine());
+                hError = false;
+            } catch (NumberFormatException e) {
+                System.out.println("Insert Integer or Float values");
+            }
 
-        Chessdeck(x,y);
+        } while (hError);
+        Chessdeck(x, y);
     }
     public static void Chessdeck(int x, int y){
         for (int j=0;j<y;j++){
